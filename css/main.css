@@ -727,17 +727,6 @@ ul.sub-menu {
   z-index:3;
 }
 
-.left-sidebar h2:after, h2.title:after{
-	content: " ";
-	position: absolute;
-	border: 1px solid #f5f5f5;
-	bottom:8px;
-	left: 0;
-	width: 100%;
-	height: 0;
-	z-index: -2;
-}
-
 .left-sidebar h2:before{
 	content: " ";
 	position: absolute;
@@ -748,18 +737,6 @@ ul.sub-menu {
 	z-index: -1;
 	left: 50%;
 	margin-left: -65px;
-}
-
-h2.title:before{
-	content: " ";
-	position: absolute;
-	background: #fff;
-	bottom: -6px;
-	width: 220px;
-	height: 30px;
-	z-index: -1;
-	left: 50%;
-	margin-left: -110px;
 }
 
 .category-products .panel {
@@ -890,15 +867,34 @@ h2.title:before{
 }
 
 
-h2.title {
+h2.title.text-center {
+  text-align: right;
+  border-bottom: 2px solid #eee;
   color: #FE980F;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 700;
   margin: 0 15px;
+  padding-bottom: 15px;
   text-transform: uppercase;
   margin-bottom: 30px;
   position: relative;
+}
+h2.title.text-center::after {
+  content: "";
+  background-color: #FE980F;
+  width: 10%;
+  height: 2px;
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+}
+
+@media (max-width: 767px) {
+	h2.title.text-center::after {
+		width: 30%;
+
+	}
 }
 
 .product-image-wrapper{
@@ -930,6 +926,30 @@ h2.title {
 	font-weight: 700;
 }
 
+.filter-buttons.text-center.mb-3{
+	margin-bottom: 30px;
+  text-align: end;
+}
+
+@media (max-width: 767px) {
+	.filter-buttons.text-center.mb-3{
+		margin-right: 20px;
+	}
+}
+
+.filter-buttons.text-center.mb-3 button{
+  margin-left: 5px;
+  background-color: #e1e1e1;
+  transition: all 0.3s ease-in-out;
+}
+.filter-buttons.text-center.mb-3 button:hover{
+  background-color: #FE980F;
+  color: #fff;
+}
+.filter-buttons.text-center.mb-3 button.active{
+  background-color: #FE980F;
+  color: #fff;
+}
 
 .productinfo p{
   font-family: 'Roboto', sans-serif;
