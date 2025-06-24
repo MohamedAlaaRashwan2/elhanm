@@ -970,6 +970,11 @@ h2.title.text-center::after {
  position:relative;
 }
 
+.page-1.active{
+	background-color: #FE980F;
+	color: #fff;
+}
+
 .product-overlay {
   background:#FE980F;
   bottom: 0;

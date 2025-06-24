@@ -401,8 +401,8 @@ ul.sub-menu{
 
 .mainmenu ul li{
 	background: rgba(0, 0, 0, 0.5);
-    padding-top: 15px;
-	padding-bottom: 0;
+    padding: 15px 20px;
+    text-align: end;
 }
 
 .mainmenu ul li:last-child{

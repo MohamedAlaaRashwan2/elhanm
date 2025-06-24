@@ -69,6 +69,18 @@ $.get("https://elhanem.com/item.php", function (dataItem) {
 
 let filteredProducts = products; // هنعرض منه المنتجات
 
+
+const buttonsPage = document.querySelectorAll('.page-1');
+console.log(buttonsPage);
+buttonsPage.forEach(button => {
+    button.addEventListener('click', () => {
+        buttonsPage.forEach(e => {
+            e.classList.remove('active');
+        });
+        button.classList.add('active');
+    });
+});
+
 const buttons = document.querySelectorAll('.filter-buttons button');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -78,7 +90,6 @@ buttons.forEach(button => {
         button.classList.add('active');
     });
 });
-
 /* تحميل المنتجات في الصفحة */
 function filterProducts(type) {
     if (type === 'all') {
