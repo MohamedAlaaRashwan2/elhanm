@@ -88,7 +88,7 @@ function loadProducts(page) {
             `;
         });
         const productDiv = document.createElement("div");
-        productDiv.classList.add("col-sm-4");
+        productDiv.classList.add("col-smm");
         productDiv.innerHTML = `
             <div class="product-image-wrapper">
                 <div class="single-products">

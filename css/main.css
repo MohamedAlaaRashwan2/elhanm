@@ -21,6 +21,13 @@ ul li {
   list-style: none;
 }
 
+.col-smm{
+  position: relative;
+  min-height: 1px;
+  padding-right: 30px;
+  padding-left: 15px;
+}
+
 a:hover {
 outline: none;
 text-decoration:none;
