@@ -59,6 +59,7 @@ $.get("https://elhanem.com/item.php", function (dataItem) {
             additionalImages: AddPashToImge,
             color: colors[0],
             availableColors: colors,
+            type: dataItem[a].type,
         };
         products.push(pro);
     }
@@ -94,7 +95,7 @@ function loadProducts(page) {
     const productsPerPage = 9;
     const startIndex = (page - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
-    const productsToDisplay = products.slice(startIndex, endIndex);
+    const productsToDisplay = filteredProducts.slice(startIndex, endIndex);
     const productsList = document.getElementById("products-list");
     
 
@@ -132,6 +133,7 @@ function loadProducts(page) {
 
     currentPage = page;
 }
+
 
 /* إضافة المنتج إلى السلة */
 function addToCart(name, price, image, size) {
