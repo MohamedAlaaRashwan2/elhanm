@@ -128,7 +128,7 @@ function loadProducts(page) {
                         <a href="product-details.html?name=${encodeURIComponent(product.name)}&price=${encodeURIComponent(product.price)}&image=${encodeURIComponent(product.imagefordetl)}&brand=${encodeURIComponent(product.brand)}&sizes=${encodeURIComponent(JSON.stringify(product.sizes))}&additionalImages=${encodeURIComponent(JSON.stringify(product.additionalImages))}">
                             <img src="${product.image}" alt="${product.name}" />
                         </a>
-                        <h2>${product.price}</h2>
+                        <h2>${product.price} EGP</h2>
                         <p>${product.name}</p>
                         <a href="#" class="btn btn-default add-to-cart" onclick="addToCart('${product.name}', '${product.price}', '${product.imagefordetl}')">
                             <i class="fa fa-shopping-cart"></i> Add to cart

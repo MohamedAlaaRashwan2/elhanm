@@ -10,7 +10,7 @@ $(function () {
 
     // استهداف عناصر العناصر الموصى بها
     let re_imgs = $(".recomend_data img");
-    let re_prices = $(".recomend_data h2");
+    let re_prices = $(".recomend_data h2.page");
     let re_nameImge = $(".recomend_data p");
 
     // جلب البيانات مرة واحدة
@@ -24,9 +24,9 @@ $(function () {
         $.each(dataItem, function (index, item) {
             if (index < imgs.length) {
                 $(imgs[index]).attr("src", `admin/uploded/img-uploded/${item.single_image}`);
-                $(prices[index]).text(item.price);
+                $(prices[index]).text(item.price + " EGP");
                 $(nameImge[index]).text(item.name_item);
-                $(prices2[index]).text(item.price);
+                $(prices2[index]).text(item.price + " EGP");
                 $(nameImge2[index]).text(item.name_item);
             }
         });
@@ -35,7 +35,7 @@ $(function () {
         let reverseIndex = dataItem.length - 1;
         for (let i = 0; i < Math.min(re_imgs.length, dataItem.length); i++) {
             $(re_imgs[i]).attr("src", `admin/uploded/img-uploded/${dataItem[reverseIndex].single_image}`);
-            $(re_prices[i]).text(dataItem[reverseIndex].price);
+            $(re_prices[i]).text(dataItem[reverseIndex].price + " EGP");
             $(re_nameImge[i]).text(dataItem[reverseIndex].name_item);
             reverseIndex--;
         }
