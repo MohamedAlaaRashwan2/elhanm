@@ -941,6 +941,7 @@ h2.title.text-center::after {
   margin-left: 5px;
   background-color: #e1e1e1;
   transition: all 0.3s ease-in-out;
+  color: #363432;
 }
 .filter-buttons.text-center.mb-3 button:hover{
   background-color: #FE980F;

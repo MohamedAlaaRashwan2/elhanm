@@ -97,8 +97,6 @@ function loadProducts(page) {
     const endIndex = startIndex + productsPerPage;
     const productsToDisplay = filteredProducts.slice(startIndex, endIndex);
     const productsList = document.getElementById("products-list");
-    
-
     productsList.innerHTML = ""; // مسح المحتوى القديم
     productsToDisplay.forEach((product) => {
         let colorOptions = "";
