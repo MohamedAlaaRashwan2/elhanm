@@ -78,7 +78,7 @@ function loadProducts(page) {
     
 
     productsList.innerHTML = ""; // مسح المحتوى القديم
-    productsToDisplay.forEach((product,index) => {
+    productsToDisplay.forEach((product) => {
         let colorOptions = "";
         product.availableColors.forEach(color => {
             colorOptions += `

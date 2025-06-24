@@ -67,8 +67,12 @@ function addToCart(name, price, image, size) {
     const existingProduct = cart.find(item => item.name === name && item.size === size);
 
     if (existingProduct) {
-        alert("هذا المنتج موجود بالفعل في السلة!");
-        return;
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "هذا المنتج موجود بالفعل في السلة!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });        return;
     }
 
     cart.push({ name, price, image, size });
