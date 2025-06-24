@@ -143,6 +143,13 @@
 	float: left;
 }
 
+.col-smm{
+	position: relative;
+	min-height: 1px;
+	padding-right: 30px;
+	padding-left: 15px;
+  }
+
 .header_top .col-sm-6:last-child{
 	display: inline-block;
 	float: right;
