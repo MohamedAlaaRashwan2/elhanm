@@ -960,7 +960,7 @@ h2.title {
   display: block;
   opacity: 0; 
   height:28%;
-
+  border-radius: 15px;
 }
 
 .single-products:hover .product-overlay {
