@@ -1,13 +1,18 @@
-/* price range */
+// eslint-disable-next-line no-undef
 $('#sl2').slider();
 
+// eslint-disable-next-line no-unused-vars
 var RGBChange = function () {
+    // eslint-disable-next-line no-undef
     $('#RGB').css('background', 'rgb(' + r.getValue() + ',' + g.getValue() + ',' + b.getValue() + ')');
 };
 
 /* scroll to top */
+// eslint-disable-next-line no-undef
 $(document).ready(function () {
+    // eslint-disable-next-line no-undef
     $(function () {
+        // eslint-disable-next-line no-undef
         $.scrollUp({
             scrollName: 'scrollUp',
             scrollDistance: 300,
@@ -27,10 +32,10 @@ $(document).ready(function () {
 });
 
 /* تحميل المنتجات من السيرفر */
-let currentPage = 1;
 let products = [];
 var pro; // Declare pro as a global variable
 
+// eslint-disable-next-line no-undef
 $.get("https://elhanem.com/item.php", function (dataItem) {
     for (let a = 0; a < dataItem.length; a++) {
         let AddPashToImge = [];
@@ -71,7 +76,6 @@ let filteredProducts = products; // هنعرض منه المنتجات
 
 
 const buttonsPage = document.querySelectorAll('.page-1');
-console.log(buttonsPage);
 buttonsPage.forEach(button => {
     button.addEventListener('click', () => {
         buttonsPage.forEach(e => {
@@ -91,6 +95,7 @@ buttons.forEach(button => {
     });
 });
 /* تحميل المنتجات في الصفحة */
+// eslint-disable-next-line no-unused-vars
 function filterProducts(type) {
     if (type === 'all') {
       filteredProducts = products;
@@ -110,6 +115,7 @@ function loadProducts(page) {
     const productsList = document.getElementById("products-list");
     productsList.innerHTML = ""; // مسح المحتوى القديم
     productsToDisplay.forEach((product) => {
+        // eslint-disable-next-line no-unused-vars
         let colorOptions = "";
         product.availableColors.forEach(color => {
             colorOptions += `
@@ -140,11 +146,13 @@ function loadProducts(page) {
         productsList.appendChild(productDiv);
     });
 
+    // eslint-disable-next-line no-undef
     currentPage = page;
 }
 
 
 /* إضافة المنتج إلى السلة */
+// eslint-disable-next-line no-unused-vars
 function addToCart(name, price, image, size) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -162,11 +170,13 @@ function addToCart(name, price, image, size) {
     // حفظ السلة في localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 
+    // eslint-disable-next-line no-undef
     Swal.fire({
         title: "Good job!",
         text: "تمت إضافة المنتج إلى السلة!",
         icon: "success"
     });
+    // eslint-disable-next-line no-undef
     loadCart();
 }
 

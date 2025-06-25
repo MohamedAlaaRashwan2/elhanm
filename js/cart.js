@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const discountAmountElement = document.querySelector("#discount-amount");
     const totalElement = document.querySelector("#cart-total");
     const couponInput = document.getElementById("coupon-code");
-    const applyCouponButton = document.getElementById("apply-coupon");
     const continueBtn = document.querySelector(".btn.btn-primary.send");
     
 
@@ -24,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = await response.json();
 
             if (data.valid) {
+                // eslint-disable-next-line no-undef
                 Swal.fire({
                     title: "Good job!",
                     text: "🎉 كود الخصم صالح! سيتم تطبيقه.",
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
                 return subTotal * (data.discount / 100);
             } else {
+                // eslint-disable-next-line no-undef
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
@@ -139,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
         continueBtn.addEventListener("click", async (e) => {
             e.preventDefault();
             if (cart.length === 0) {
+                // eslint-disable-next-line no-undef
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
@@ -146,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
                 return;
             } else {
+                // eslint-disable-next-line no-undef
                 Swal.fire({
                     title: "Good job!",
                     text: "تم ارسال الطلب بنجاح",
@@ -160,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const couponCode = couponInput.value.trim();
 
             if (!name || !address || !phoneNumber || !email) {
+                // eslint-disable-next-line no-undef
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
