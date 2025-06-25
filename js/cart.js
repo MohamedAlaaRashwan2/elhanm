@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartTableBody = document.querySelector("#cart-table tbody");
@@ -11,8 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const couponInput = document.getElementById("coupon-code");
     const continueBtn = document.querySelector(".btn.btn-primary.send");
     
-
-
     const shippingCost = "- -";
     async function fetchCouponDiscount(subTotal) {
         const couponCode = couponInput.value.trim();
@@ -46,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+
     async function calculateTotals() {
         const subTotal = cart.reduce((sum, product) => {
             const price = parseFloat(product.price.replace(/[^\d.]/g, "")) || 0;
@@ -60,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
         discountAmountElement.textContent = `EGP - ${discount.toFixed(2)}`;
         totalElement.textContent = `EGP ${total.toFixed(2)}`;
     }
-
 
     function updateCartDisplay() {
         cartTableBody.innerHTML = "";
@@ -95,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
      </td>
      <td><button onclick="removeFromCart(${index})">حذف</button></td>
      `;
- cartTableBody.appendChild(row); });
+     cartTableBody.appendChild(row); });
 
         calculateTotals();
     }
@@ -173,7 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-
             const subTotal = cart.reduce((sum, product) => {
                 const basePrice = parseFloat(product.price.replace(/[^\d.]/g, ""));
                 return sum + basePrice * product.quantity;
@@ -212,10 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const whatsappNumber = "+201066427362";
             const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
             window.open(whatsappLink, "_blank");
-
-
         });
     }
-
     updateCartDisplay();
 });
