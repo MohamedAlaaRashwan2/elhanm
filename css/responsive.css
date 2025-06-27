@@ -194,14 +194,19 @@
 	width: 100%;
 }
 
+.mainmenu ul{
+	margin-bottom: 20px;
+}
+
 .mainmenu ul li{
 	background: rgba(0, 0, 0, 0.5);
     padding-top: 15px;
 	padding-bottom: 0;
+	text-align: right;
+	border-bottom: 1px solid #9b9b9b;
 }
-
-.mainmenu ul li:last-child{
-	padding-bottom: 15px;
+.mainmenu ul li a:hover{
+transform: translateX(-15px);
 }
 
 .mainmenu ul li  a{
@@ -402,7 +407,9 @@ ul.sub-menu{
 .mainmenu ul li{
 	background: rgba(0, 0, 0, 0.5);
     padding: 15px 20px;
-    text-align: end;
+    text-align: right;
+	border-bottom: 1px solid #9b9b9b;
+
 }
 
 .mainmenu ul li:last-child{

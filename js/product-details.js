@@ -80,6 +80,7 @@ function addToCart(name, price, image, size) {
     // حفظ السلة في localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
+    // eslint-disable-next-line no-undef
     Swal.fire({
         title: "Good job!",
         text: "تمت إضافة المنتج إلى السلة!",

@@ -92,9 +92,8 @@
 					<div class="product-details">
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img id="product-image" src="" alt="Product Image" />
+								<img id="product-image" class="main-image" src="" alt="Product Image" />
 							</div>
-							<div id="additional-images" class="additional-images"></div>
 						</div>
 						<div class="col-sm-7">
 							<div class="product-information">
@@ -105,11 +104,13 @@
 									<label>Quantity:</label>
 									<input id="product-quantity" type="number" value="1" min="1" step="1" />
 									<label for="product-size">Size:</label>
-									<select id="product-size" style="margin: 13px 0 5px 0;">
-  									  <option value="small">1x</option>
-  									  <option value="medium">2x</option>
-    									<option value="large">3x</option>
-											</select>
+									<select id="product-size" style="margin: 13px 0 5px 0;
+									width: 40%;">
+										<option value="small">S</option>
+										<option value="medium">M</option>
+										<option value="large">L</option>
+										<option value="extra-large">XL</option>
+									</select>
 
 									<button id="add-to-cart" type="button" class="btn btn-default cart">
 										<i class="fa fa-shopping-cart"></i> Add to cart
@@ -121,7 +122,6 @@
 							</div>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
