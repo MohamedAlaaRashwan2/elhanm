@@ -189,7 +189,9 @@
 	display: inline-block;
 	width: 100%;
 }
-
+.view-product img {
+	height: 330px;
+}
 .mainmenu{
 	width: 100%;
 }
