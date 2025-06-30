@@ -53,7 +53,6 @@ $.get("https://elhanem.com/item.php", function (dataItem) {
             : "https://elhanem.com/default-image.jpg";
 
         let colors = dataItem[a].color.split(",");
-
         pro = {
             image: singleImage,
             imagefordetl: singleImage,
@@ -61,7 +60,7 @@ $.get("https://elhanem.com/item.php", function (dataItem) {
             name: dataItem[a].name_item,
             brand: "ELHANIM",
             sizes: ["1x", "2x", "3x"],
-            additionalImages: AddPashToImge,
+            additionalImage: AddPashToImge,
             color: colors[0],
             availableColors: colors,
             type: dataItem[a].type,
@@ -70,10 +69,7 @@ $.get("https://elhanem.com/item.php", function (dataItem) {
     }
     loadProducts(1); // تحميل المنتجات بعد جلب البيانات
 }, 'json');
-
-
 let filteredProducts = products; // هنعرض منه المنتجات
-
 
 const buttonsPage = document.querySelectorAll('.page-1');
 buttonsPage.forEach(button => {
@@ -98,15 +94,13 @@ buttons.forEach(button => {
 // eslint-disable-next-line no-unused-vars
 function filterProducts(type) {
     if (type === 'all') {
-      filteredProducts = products;
+        filteredProducts = products;
     } else {
-      filteredProducts = products.filter(product => product.type === type);
+        filteredProducts = products.filter(product => product.type === type);
     }
     loadProducts(1); // عرض النتيج
- 
-}
 
-  
+}
 function loadProducts(page) {
     const productsPerPage = 9;
     const startIndex = (page - 1) * productsPerPage;
@@ -131,7 +125,7 @@ function loadProducts(page) {
             <div class="product-image-wrapper">
                 <div class="single-products">
                     <div class="productinfo text-center">
-                        <a href="product-details.html?name=${encodeURIComponent(product.name)}&price=${encodeURIComponent(product.price)}&image=${encodeURIComponent(product.imagefordetl)}&brand=${encodeURIComponent(product.brand)}&sizes=${encodeURIComponent(JSON.stringify(product.sizes))}&additionalImages=${encodeURIComponent(JSON.stringify(product.additionalImages))}">
+                        <a href="product-details.html?name=${encodeURIComponent(product.name)}&price=${encodeURIComponent(product.price)}&image=${encodeURIComponent(product.imagefordetl)}&brand=${encodeURIComponent(product.brand)}&sizes=${encodeURIComponent(JSON.stringify(product.sizes))}&additionalImages=${encodeURIComponent(JSON.stringify(product.additionalImage))}">
                             <img src="${product.image}" alt="${product.name}" />
                         </a>
                         <h2>${product.price} EGP</h2>
@@ -149,8 +143,6 @@ function loadProducts(page) {
     // eslint-disable-next-line no-undef
     currentPage = page;
 }
-
-
 /* إضافة المنتج إلى السلة */
 // eslint-disable-next-line no-unused-vars
 function addToCart(name, price, image, size) {

@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const queryParams = new URLSearchParams(window.location.search);
 
+    const queryParams = new URLSearchParams(window.location.search);
     const productName = queryParams.get("name") || "Unknown Product";
     const productPrice = queryParams.get("price") || "0 EGP";
     const productImage = queryParams.get("image") || "default.jpg";
     const productBrand = queryParams.get("brand") || "No Brand";
-
 
     const productSizes = queryParams.get("sizes") ? JSON.parse(decodeURIComponent(queryParams.get("sizes"))) : [];
     const additionalImages = queryParams.get("additionalImages") ? JSON.parse(decodeURIComponent(queryParams.get("additionalImages"))) : [];
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const productImageElement = document.getElementById("product-image");
     if (productImageElement) productImageElement.src = productImage;
-
     // إضافة الصور المصغرة
     const additionalImagesContainer = document.getElementById("additional-images");
     if (additionalImagesContainer) {
@@ -57,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             addToCart(productName, productPrice, selectedImage, selectedSize);
         });
     }
+
 });
 
 // وظيفة لإضافة المنتج إلى السلة
@@ -67,12 +66,13 @@ function addToCart(name, price, image, size) {
     const existingProduct = cart.find(item => item.name === name && item.size === size);
 
     if (existingProduct) {
+        // eslint-disable-next-line no-undef
         Swal.fire({
             icon: "error",
             title: "Oops...",
             text: "هذا المنتج موجود بالفعل في السلة!",
             footer: '<a href="#">Why do I have this issue?</a>'
-          });        return;
+        }); return;
     }
 
     cart.push({ name, price, image, size });
@@ -97,3 +97,4 @@ if (sizeSelect) {
         sizeSelectElement.innerHTML = selectedSize;
     });
 }
+

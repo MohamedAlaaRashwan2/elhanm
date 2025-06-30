@@ -1229,10 +1229,6 @@ h2.title.text-center::after {
 *******Product Details CSS******
 **************************/
 
-.product-details{
-	overflow:hidden;
-}
-
 
 #similar-product {
   margin-top: 40px;
@@ -1246,7 +1242,6 @@ h2.title.text-center::after {
 
 .product-details {
   margin-bottom: 40px;
-  overflow: hidden;
   margin-top: 10px;
 }
 
@@ -1256,13 +1251,15 @@ h2.title.text-center::after {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  margin: 10px 0;
 }
 
-.view-product img {
+.view-product img.active {
   height: 480px;
   transition:  0.3s ease-in-out;
+  width: 100%;
 }
-.view-product img:hover {
+.view-product img.active:hover {
 transform: scale(1.1);
 }
 
@@ -2716,6 +2713,7 @@ text-align: end;
   color: #f5f5f5;
 }
 .additional-images img {
+  width: 30%;
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 5px;
