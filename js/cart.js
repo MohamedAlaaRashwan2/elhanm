@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalElement = document.querySelector("#cart-total");
     const couponInput = document.getElementById("coupon-code");
     const continueBtn = document.querySelector(".btn.btn-primary.send");
-    
+
     const shippingCost = "- -";
     async function fetchCouponDiscount(subTotal) {
         const couponCode = couponInput.value.trim();
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cart.forEach((product, index) => {
             product.quantity = product.quantity || 1;
             product.size = product.size || "1x";
-            product.color = product.color || "red";            
+            product.color = product.color || "red";
             const price = parseFloat(product.price.replace(/[^\d.]/g, "")) || 0;
 
             const row = document.createElement("tr");
@@ -91,7 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
      </td>
      <td><button onclick="removeFromCart(${index})">حذف</button></td>
      `;
-     cartTableBody.appendChild(row); });
+            cartTableBody.appendChild(row);
+        });
 
         calculateTotals();
     }
@@ -126,11 +127,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const btn = document.getElementById("some-id");
     if (btn) {
-      btn.addEventListener("click", () => {
-        calculateTotals();
-      });
+        btn.addEventListener("click", () => {
+            calculateTotals();
+        });
     }
- 
+
     // زر إرسال عبر الإيميل
     if (continueBtn) {
         continueBtn.addEventListener("click", async (e) => {

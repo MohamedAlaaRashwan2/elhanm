@@ -29,7 +29,7 @@ jQuery(function($) {
         return;
     }
 
-    let map = new GMaps({
+    let map = new map({
         el: '#gmap',
         lat: 43.1580159,
         lng: -77.6030777,
@@ -44,10 +44,10 @@ jQuery(function($) {
     });
 
     // أيقونة العلامة على الخريطة
-    let image = 'images/map-icon.png';
     map.addMarker({
         lat: 43.1580159,
         lng: -77.6030777,
+        // eslint-disable-next-line no-undef
         animation: google.maps.Animation.DROP,
         verticalAlign: 'bottom',
         horizontalAlign: 'center',

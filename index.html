@@ -38,6 +38,10 @@
 </head><!--/head-->
 
 <body>
+<div class="blocked">
+	<h2> !! هذا الموقع مغلق حاليا</h2>
+	<p>تواصل مع مطور الموقع</p>
+</div>
 	<header id="header"><!--header-->
 
 
@@ -555,12 +559,6 @@
 				button.addEventListener("click", (event) => {
 					event.preventDefault(); // منع إعادة التوجيه الافتراضي
 					const productElement = button.closest(".product-image-wrapper");
-
-					if (!productElement) {
-						console.error("Unable to find product container.");
-						return;
-					}
-
 					// جلب بيانات المنتج
 					const image = productElement.querySelector("img").src;
 					const price = productElement.querySelector("h2").textContent;

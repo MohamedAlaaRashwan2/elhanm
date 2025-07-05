@@ -6,12 +6,33 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
+.blocked{
+	width: 100%;
+	height: 100vh;
+	background: #fff;
+	text-align: center;
+  margin-top: 40vh ;
+	color: #000;
+	
+}
+
+.blocked h2{
+	margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: 700;
+}
+.blocked p{
+	font-size: 35px;
+	margin-top: 20px;
+  color: #d14742;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
   background: #fff;
   position: relative;
   font-weight:400px;
+  overflow: hidden;
 }
 .auto-text-direction {
   direction: rtl;
@@ -859,6 +880,7 @@ ul.sub-menu {
 
 .padding-right {
   padding-right: 0;
+  margin-bottom: 10px;
 }
 
 .features_items{
@@ -1254,12 +1276,12 @@ h2.title.text-center::after {
   margin: 10px 0;
 }
 
-.view-product img.active {
+.view-product img {
   height: 480px;
   transition:  0.3s ease-in-out;
   width: 100%;
 }
-.view-product img.active:hover {
+.view-product img:hover {
 transform: scale(1.1);
 }
 
